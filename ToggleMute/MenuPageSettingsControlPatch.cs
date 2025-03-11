@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using TMPro;
-
+/*
 namespace ToggleMute
 {
     [HarmonyPatch(typeof(MenuPageSettingsControls), "Start")]
@@ -46,6 +46,5 @@ namespace ToggleMute
                 Debug.LogError("RectTransform not found on cloned button!");
             }
         }
-
     }
-}
+}*/
