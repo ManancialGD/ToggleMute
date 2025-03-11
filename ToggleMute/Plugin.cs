@@ -17,13 +17,10 @@ public class PushToMuteMod : BaseUnityPlugin
 {
     public static ConfigEntry<KeyCode> MuteKey { get; private set; }
     public static ConfigEntry<float> SoundVolume { get; private set; }
-
     private Harmony harmony;
     private static GameObject hudCanvas;
     public AssetBundle muteIconBundle;
     public static PushToMuteMod Instance;
-
-
 
     private void Awake()
     {
@@ -60,10 +57,9 @@ public class PushToMuteMod : BaseUnityPlugin
         PushToMutePatch.UpdateUI(PushToMutePatch.isMuted);
     }
 
-        void LogAssetNames(AssetBundle bundle)
+    public void LogAssetNames(AssetBundle bundle)
     {
         if (bundle == null) return;
-
         string[] assetNames = bundle.GetAllAssetNames();
         foreach (var name in assetNames)
         {
@@ -170,7 +166,6 @@ class PushToMutePatch
 
     public static void UpdateUI(bool Animation)
     {
-
             if (muteIcon == null)
             {
                 InitMuteIcon();
@@ -191,15 +186,14 @@ static void Postfix(PlayerVoiceChat __instance)
     {
         InitMuteIcon();
     }
-
-        bool isChatActive = (bool)typeof(ChatManager)
-            .GetField("chatActive", BindingFlags.NonPublic | BindingFlags.Instance)?
-            .GetValue(ChatManager.instance);
-
-        if (isChatActive) return;
+    bool isChatActive = (bool)typeof(ChatManager)
+        .GetField("chatActive", BindingFlags.NonPublic | BindingFlags.Instance)?
+        .GetValue(ChatManager.instance);
 
 
-        if (Input.GetKeyDown(muteKey))
+    if (isChatActive) return;
+
+    if (Input.GetKeyDown(muteKey))
     {
         isMuted = !isMuted;
 

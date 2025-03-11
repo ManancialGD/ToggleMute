@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "LethalCompanyTemplate/0.0.5": {
+      "ToggleMute/0.0.5": {
         "dependencies": {
           "BepInEx.Analyzers": "1.0.8",
           "BepInEx.Core": "5.4.21",
@@ -26,7 +26,7 @@
           "UnityEngine.UI": "1.0.0.0"
         },
         "runtime": {
-          "LethalCompanyTemplate.dll": {}
+          "ToggleMute.dll": {}
         }
       },
       "BepInEx.Analyzers/1.0.8": {},
@@ -518,7 +518,7 @@
     }
   },
   "libraries": {
-    "LethalCompanyTemplate/0.0.5": {
+    "ToggleMute/0.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -2689,14 +2689,14 @@
   "project": {
     "version": "0.0.5",
     "restore": {
-      "projectUniqueName": "D:\\RepoMods\\LethalCompanyTemplate\\LethalCompanyTemplate.csproj",
-      "projectName": "LethalCompanyTemplate",
-      "projectPath": "D:\\RepoMods\\LethalCompanyTemplate\\LethalCompanyTemplate.csproj",
+      "projectUniqueName": "D:\\ToggleMute\\ToggleMute\\ToggleMute.csproj",
+      "projectName": "ToggleMute",
+      "projectPath": "D:\\ToggleMute\\ToggleMute\\ToggleMute.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\RepoMods\\LethalCompanyTemplate\\obj\\",
+      "outputPath": "D:\\ToggleMute\\ToggleMute\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "D:\\RepoMods\\NuGet.Config",
+        "D:\\ToggleMute\\NuGet.Config",
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8N/yn6XrU90mW+mw04qvx5j2MMCxHD1j6Si/QoMci4v74uA9EfRIRI5XqDZo4MjEZbj36Y6zLMUQox/JiXEEQQ==",
+  "dgSpecHash": "vh63sTmlswiRKUA7cDTuQS9Et1oAGXNgYESlzRutpkApUeIVbQbol3B2G/Q7jZCqCAftoXbrMA6D0wnsPZKZXA==",
   "success": true,
-  "projectFilePath": "D:\\RepoMods\\LethalCompanyTemplate\\LethalCompanyTemplate.csproj",
+  "projectFilePath": "D:\\ToggleMute\\ToggleMute\\ToggleMute.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\bepinex.analyzers\\1.0.8\\bepinex.analyzers.1.0.8.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\bepinex.baselib\\5.4.20\\bepinex.baselib.5.4.20.nupkg.sha512",
