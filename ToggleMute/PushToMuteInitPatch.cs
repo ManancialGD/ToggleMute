@@ -10,6 +10,7 @@ namespace ToggleMute
     [HarmonyPatch(typeof(PlayerVoiceChat), "Awake")]
     class PushToMuteInitPatch
     {
+        [HarmonyPostfix]
         static void Postfix(PlayerVoiceChat __instance)
         {
             PhotonView photonView = __instance.GetComponent<PhotonView>();

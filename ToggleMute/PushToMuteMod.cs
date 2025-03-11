@@ -16,6 +16,7 @@ namespace ToggleMute
     {
         public static ConfigEntry<KeyCode> MuteKey { get; private set; }
         public static ConfigEntry<float> SoundVolume { get; private set; }
+        public static ConfigEntry<int> AnimationTime { get; private set; }
         private Harmony harmony;
         private static GameObject hudCanvas;
         public AssetBundle muteIconBundle;
@@ -23,7 +24,6 @@ namespace ToggleMute
 
         private void Awake()
         {
-
             Instance = this;
             gameObject.hideFlags = HideFlags.HideAndDontSave;
 
@@ -39,6 +39,13 @@ namespace ToggleMute
                 "SoundVolume",
                 0.3f,
                 "Volume of mute/unmute sound (0.0 - 1.0)"
+            );
+
+            AnimationTime = Config.Bind(
+                "General",
+                "Animation Duration",
+                200,
+                "Duration of the mute icon animation in milliseconds."
             );
 
             string sAssemblyLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
