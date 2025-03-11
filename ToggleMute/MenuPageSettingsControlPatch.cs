@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using TMPro;
-/*
+
 namespace ToggleMute
 {
-
     [HarmonyPatch(typeof(MenuPageSettingsControls), "Start")]
     public class MenuPageSettingsControlPatch
     {
@@ -49,4 +48,4 @@ namespace ToggleMute
         }
 
     }
-}*/
+}

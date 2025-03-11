@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\breno\\Desktop\\ToggleMute\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|c:\\users\\breno\\desktop\\togglemute\\togglemute\\pushtomutepatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|solutionrelative:togglemute\\pushtomutepatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|c:\\users\\breno\\desktop\\togglemute\\togglemute\\pushtomutemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|solutionrelative:togglemute\\pushtomutemod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|c:\\users\\breno\\desktop\\togglemute\\togglemute\\pushtomutepatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|solutionrelative:togglemute\\pushtomutepatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|c:\\users\\breno\\desktop\\togglemute\\togglemute\\menupagesettingscontrolpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|solutionrelative:togglemute\\menupagesettingscontrolpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DC60A9D-F44B-4B06-8A37-9B05D6D2CAC8}|ToggleMute\\ToggleMute.csproj|c:\\users\\breno\\desktop\\togglemute\\togglemute\\pushtomutecleanuppatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PushToMuteMod.cs",
               "DocumentMoniker": "C:\\Users\\breno\\Desktop\\ToggleMute\\ToggleMute\\PushToMuteMod.cs",
               "RelativeDocumentMoniker": "ToggleMute\\PushToMuteMod.cs",
               "ToolTip": "C:\\Users\\breno\\Desktop\\ToggleMute\\ToggleMute\\PushToMuteMod.cs",
               "RelativeToolTip": "ToggleMute\\PushToMuteMod.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAqwBkAAAAJAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAIwE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T17:13:29.412Z",
               "IsPinned": true,
@@ -41,6 +45,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MenuPageSettingsControlPatch.cs",
+              "DocumentMoniker": "C:\\Users\\breno\\Desktop\\ToggleMute\\ToggleMute\\MenuPageSettingsControlPatch.cs",
+              "RelativeDocumentMoniker": "ToggleMute\\MenuPageSettingsControlPatch.cs",
+              "ToolTip": "C:\\Users\\breno\\Desktop\\ToggleMute\\ToggleMute\\MenuPageSettingsControlPatch.cs",
+              "RelativeToolTip": "ToggleMute\\MenuPageSettingsControlPatch.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T22:31:57.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PushToMuteCleanupPatch.cs",
               "DocumentMoniker": "C:\\Users\\breno\\Desktop\\ToggleMute\\ToggleMute\\PushToMuteCleanupPatch.cs",
               "RelativeDocumentMoniker": "ToggleMute\\PushToMuteCleanupPatch.cs",
@@ -48,18 +65,17 @@
               "RelativeToolTip": "ToggleMute\\PushToMuteCleanupPatch.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T19:27:54.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-11T19:27:54.391Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PushToMutePatch.cs",
               "DocumentMoniker": "C:\\Users\\breno\\Desktop\\ToggleMute\\ToggleMute\\PushToMutePatch.cs",
               "RelativeDocumentMoniker": "ToggleMute\\PushToMutePatch.cs",
               "ToolTip": "C:\\Users\\breno\\Desktop\\ToggleMute\\ToggleMute\\PushToMutePatch.cs",
               "RelativeToolTip": "ToggleMute\\PushToMutePatch.cs",
-              "ViewState": "AQIAAKsAAAAAAAAAAAAxwLsAAAAwAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAADwvx0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-11T17:18:15.15Z",
               "EditorCaption": ""

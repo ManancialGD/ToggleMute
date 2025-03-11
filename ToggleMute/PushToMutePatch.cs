@@ -16,19 +16,28 @@ namespace ToggleMute
     class PushToMutePatch
     {
         public static Dictionary<PlayerVoiceChat, Recorder> playerRecorders = new Dictionary<PlayerVoiceChat, Recorder>();
-        public static bool isMuted = false;
+
         private static GameObject muteIcon;
         private static GameObject cutLineIcon;
+
         private static Image muteIconImage;
         private static Image cutLineImage;
+
         private static Color muteIconColor;
         private static Color cutLineColor;
+
         private static AssetBundle muteIconBundle;
+
         private static AudioSource audioSource;
+
         private static AudioClip muteSound;
         private static AudioClip unmuteSound;
+
         public static PlayerVoiceChat instance;
+
         public static Coroutine AnimateIconCoroutine;
+
+        public static bool isMuted = false;
         private static float t = 0;
 
         public static void UpdateUI(bool Animation)
@@ -78,7 +87,6 @@ namespace ToggleMute
 
         private static void InitMuteIcon()
         {
-
             //Debug.Log("hello im here to init the mute icon :3");
 
             GameObject hudCanvas = PushToMuteMod.GetHudCanvas();
@@ -173,22 +181,43 @@ namespace ToggleMute
         {
             while (true)
             {
+                // Null verifications
                 if (muteIcon == null || muteIconImage == null)
                 {
                     AnimateIconCoroutine = null;
                     yield break;
                 }
-                if (muteIcon.transform.localScale == Vector3.one && isMuted)
+
+                // Check if the animation is over.
+                if (t == 1 && isMuted)
                 {
+                    muteIcon.transform.localScale = Vector3.one;
+                    muteIconColor.a = 1;
+                    muteIconImage.color = muteIconColor;
+
+                    cutLineIcon.transform.localScale = Vector3.one;
+                    cutLineColor.a = 1;
+                    cutLineImage.color = cutLineColor;
+
                     AnimateIconCoroutine = null;
+
                     yield break;
                 }
-                else if (muteIcon.transform.localScale == Vector3.zero && !isMuted)
+                else if (t == 0 && !isMuted)
                 {
+                    muteIcon.transform.localScale = Vector3.zero;
+                    muteIconColor.a = 0;
+                    muteIconImage.color = muteIconColor;
+
+                    cutLineIcon.transform.localScale = Vector3.zero;
+                    cutLineColor.a = 0;
+                    cutLineImage.color = cutLineColor;
+
                     AnimateIconCoroutine = null;
                     yield break;
                 }
 
+                // Devide by 0 is a nono.
                 if (PushToMuteMod.AnimationTime.Value == 0)
                     t = isMuted ? 1f : 0f;
                 else
@@ -199,15 +228,18 @@ namespace ToggleMute
 
                 float easeT = EaseInOut(t);
 
+                // Scale animation
                 muteIcon.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, easeT);
                 cutLineIcon.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, easeT);
 
+                // Alpha animation
                 muteIconColor = muteIconImage.color;
                 muteIconColor.a = Mathf.Lerp(0f, 1f, easeT);
 
                 cutLineColor = cutLineImage.color;
                 cutLineColor.a = Mathf.Lerp(0f, 1f, easeT);
 
+                // Setting the color back
                 cutLineImage.color = cutLineColor;
                 muteIconImage.color = muteIconColor;
 
@@ -215,9 +247,15 @@ namespace ToggleMute
             }
         }
 
+        /// <summary>
+        /// Applies an ease-in-out interpolation to the given input value.
+        /// </summary>
+        /// <param name="t">The interpolation factor, typically in the range [0, 1].</param>
+        /// <returns>The eased value.</returns>
         private static float EaseInOut(float t)
         {
             return t * t * (3f - 2f * t);
         }
+
     }
 }

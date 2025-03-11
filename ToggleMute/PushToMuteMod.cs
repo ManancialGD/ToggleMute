@@ -27,6 +27,19 @@ namespace ToggleMute
             Instance = this;
             gameObject.hideFlags = HideFlags.HideAndDontSave;
 
+            BindCofigs();
+
+            string sAssemblyLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            harmony = new Harmony("com.coddingcat.pushtomute");
+            harmony.PatchAll();
+            Logger.LogInfo($"Push-to-Mute mod loaded! Key: {MuteKey.Value}");
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void BindCofigs()
+        {
             MuteKey = Config.Bind(
                 "General",
                 "MuteKey",
@@ -47,23 +60,15 @@ namespace ToggleMute
                 200,
                 "Duration of the mute icon animation in milliseconds."
             );
-
-            string sAssemblyLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            harmony = new Harmony("com.coddingcat.pushtomute");
-            harmony.PatchAll();
-            Logger.LogInfo($"Push-to-Mute mod loaded! Key: {MuteKey.Value}");
-
-            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
-        public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             //Debug.Log("Scene loaded: " + scene.name);
             PushToMutePatch.UpdateUI(PushToMutePatch.isMuted);
         }
 
-        public void LogAssetNames(AssetBundle bundle)
+        private void LogAssetNames(AssetBundle bundle)
         {
             if (bundle == null) return;
             string[] assetNames = bundle.GetAllAssetNames();
