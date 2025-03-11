@@ -63,10 +63,10 @@ namespace ToggleMute
             {
                 InitMuteIcon();
             }
+
             bool isChatActive = (bool)typeof(ChatManager)
                 .GetField("chatActive", BindingFlags.NonPublic | BindingFlags.Instance)?
                 .GetValue(ChatManager.instance);
-
 
             if (isChatActive) return;
 
@@ -80,7 +80,11 @@ namespace ToggleMute
                 recorder.RecordingEnabled = !isMuted;
             }
 
-            if (AnimateIconCoroutine == null)
+            bool isAnimating = AnimateIconCoroutine == null;
+            bool needAnimation = !(t == 0 && !isMuted) ||
+                                 !(t == 1 && isMuted);
+            
+            if (!isAnimating && needAnimation)
                 AnimateIconCoroutine = __instance.StartCoroutine(AnimateIcon());
         }
 
@@ -98,6 +102,8 @@ namespace ToggleMute
             RectTransform muteIconContainerTransofrm = muteIconContainer.AddComponent<RectTransform>();
             muteIconContainerTransofrm.SetParent(hudCanvas.transform, false);
 
+            Vector2 iconSize = new Vector2(40, 40);
+
             // Anchor on Bottom-Right
             muteIconContainerTransofrm.anchorMin = new Vector2(1, 0);
             muteIconContainerTransofrm.anchorMax = new Vector2(1, 0);
@@ -106,7 +112,7 @@ namespace ToggleMute
 
             muteIconContainerTransofrm.anchoredPosition = new Vector2(-10, 10);
 
-            muteIconContainerTransofrm.sizeDelta = new Vector2(40, 40);
+            muteIconContainerTransofrm.sizeDelta = iconSize;
 
             // Setup MuteIcon.
             muteIcon = new GameObject("MuteIcon");
@@ -117,7 +123,7 @@ namespace ToggleMute
             rectTransform.pivot = new Vector2(.5f, .5f); // Pivot on center
 
             rectTransform.anchoredPosition = Vector3.zero;
-            rectTransform.sizeDelta = new Vector2(40, 40);
+            rectTransform.sizeDelta = iconSize;
 
             // Setup CutLine.
             cutLineIcon = new GameObject("CutLine");
@@ -135,7 +141,7 @@ namespace ToggleMute
             lineTransform.anchoredPosition = Vector3.zero;
 
             // Set sizeDelta to match microphone's size
-            lineTransform.sizeDelta = new Vector2(40, 40); // Same as the microphone's sizeDelta
+            lineTransform.sizeDelta = iconSize; // Same as the microphone's sizeDelta
 
             // Add the images
             muteIconImage = muteIcon.AddComponent<Image>();
