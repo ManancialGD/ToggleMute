@@ -80,10 +80,9 @@ namespace ToggleMute
                 recorder.RecordingEnabled = !isMuted;
             }
 
-            bool isAnimating = AnimateIconCoroutine == null;
-            bool needAnimation = !(t == 0 && !isMuted) ||
-                                 !(t == 1 && isMuted);
-            
+            bool isAnimating = AnimateIconCoroutine != null;
+            bool needAnimation = !((t == 1 && isMuted) || (t == 0 && !isMuted));
+
             if (!isAnimating && needAnimation)
                 AnimateIconCoroutine = __instance.StartCoroutine(AnimateIcon());
         }
